@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css"
+</head>
+<body>
+    <div class ="container">
+        <form action="/addstudent" >
+            <h3>Add Students</h3>
+            <hr>
+            <label for ="name"><b>Students name</b></label>
+            <input type="text" placeholder="Enter name" name="name" id="name" required>
+
+            <label for="phone"><b>Phone no.</b></label>
+            <input type="phone" placeholder="Enter Phone no." name="phone" id="phone" required>
+
+            <label for="email-id"><b>Email Id</b></label>
+            <input type="email" placeholder="Enter emaiL Id" name="email" id="email" required>
+
+            <div class="gender_g">
+                <strong>Gender</strong>
+                <input type="radio" name="gender" id=""value="Male">Male
+                <input type="radio" name="gender" id=""value="Female">Female
+            </div>
+
+            <button type="Submit" class="registerbtn">Add Student</button>
+
+            <a href="./" style="color:black">Back to home page</a><br>
+            
+            {{#if mesg}}
+            <h3>Data Inserted</h3>
+            {{/if}}
+            {{#if checkmesg}}
+            <h3>Email Id or Phone no. is already present</h3>
+            {{/if}}
+        </form>
+    </div>
+</body>
+</html>

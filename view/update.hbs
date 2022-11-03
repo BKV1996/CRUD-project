@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" </head>
+
+<body>
+    <div class="container">
+        <form action="/updatesearch">
+            <h3>Search Students</h3>
+            <hr>
+            <label for="phone"><b>Phone no.</b></label>
+            <input type="phone" placeholder="Type phone no to be searched" name="phone" id="phone" required>
+
+            <button type="submit" class="registerbtn">Search Students</button>
+            <a href="./" style="color: black">Back to home page</a>
+            <br>
+
+            {{#if umesg}}
+            <h3>Data Updated</h3>
+            {{/if}}
+
+            {{#if mesg2}}
+            <h3>Data Not Found</h3>
+            {{/if}}
+        </form>
+    </div>
+
+    {{!-- Search Form design end --}}
+    {{#if mesg1}}
+    <div class="container">
+        <form action="/updatestudent">
+            <h3>Update Students</h3>
+            <hr>
+{{#data}}
+            <label for="name"><b>Students name</b></label>
+            <input type="text" placeholder="Enter name" name="name" value="{{name}}" id="name" required>
+
+            <label for="phone"><b>Phone no.</b></label>
+            <input type="phone" placeholder="Enter Phone no." name="phone" value="{{phone}}" id="phone" required readonly>
+
+            <label for="email-id"><b>Email Id</b></label>
+            <input type="email" placeholder="Enter emaiL Id" name="email" value="{{email}}" id="email" required readonly>
+
+            <div class="gender_g">
+                <strong>Gender</strong>
+                <input type="radio" name="gender" id="" value="Male">Male
+                <input type="radio" name="gender" id="" value="Female">Female
+            </div>
+
+            <button type="Submit" class="registerbtn">Update Student</button>
+{{/data}}
+
+            <a href="./" style="color:black">Back to home page</a><br>
+
+        </form>
+    </div>
+    {{/if}}
+</body>
+
+</html>
